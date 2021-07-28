@@ -1,8 +1,19 @@
 
 // Função comum:
-double calcularSoma(double a, double b){
+double calcularSoma(double a, double b)
+{
   double result = a + b;
   return result;
+}
+
+// Função com dynamic:
+dynamic calcularSomaDynamic(dynamic a, dynamic b)
+{
+  print("a eh tipo: ${a.runtimeType}");
+  print("b eh tipo: ${b.runtimeType}");
+  dynamic c = a + b;
+  print("c eh tipo: ${c.runtimeType}");
+  return c;
 }
 
 // Função com apenas um comando, sem retorno:
@@ -26,6 +37,9 @@ void main()
 {
   funcaoInLine();
   
+  dynamic d = calcularSomaDynamic(2, 4.5);
+  print(d);
+
   var r = calcularSoma(2, 5);
   print(r);
 
@@ -46,4 +60,5 @@ void main()
     return result;
   });
   print(r);
+  
 }

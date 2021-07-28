@@ -12,8 +12,9 @@ void main()
 
   // ATENÇÃO: novidade
   String? str;
+  print("str = $str");   // null
   str ??= "Não Informado";  
-  print(str);   // "Não Informado"
+  print("str = $str");   // "Não Informado"
 
 
   str = "dois";

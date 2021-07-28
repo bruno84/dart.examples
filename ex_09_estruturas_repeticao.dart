@@ -25,15 +25,31 @@ void main()
     i++;          
   } while(i < vf);
   
-  print("");
+  print("\n");
 
+  // FOREACH (para objetos iterable)
   List myList = ["zero", "um", "dois", "três", "quatro"];
   stdout.writeAll(myList, ";");
-  
   print("");
 
-  // FOREACH
   for (String str in myList) {
     stdout.write("$str ");
   }
+
+  print("\n");
+
+  Iterable subList1 = myList.where((element) => element.length == 4);
+  print(subList1);
+  print(subList1.toList());
+
+  print("");
+
+  // FOREACH (para objetos not-iterable)
+  Map<int, String> myMap = {1: "Valor1", 2: "Valor2"};
+
+  for (int key in myMap.keys) {
+    stdout.write("$key:${myMap[key]}  ");
+  }
+
+  print("\n\n");
 }
