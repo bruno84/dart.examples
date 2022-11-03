@@ -40,4 +40,20 @@ main()
   const double PI = 3.1416;
   print("Constante PI: $PI \n");
 
+  // Cast
+  num myNum = 10;
+  print(myNum);
+  print(myNum is int);
+  print(myNum is double);
+
+  int i = myNum as int;
+  print(i);
+
+  myNum = 10.99;
+  print(myNum);
+  print(myNum is int);
+  print(myNum is double);
+
+  double d = myNum as double;
+  print(d);
 }
