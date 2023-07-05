@@ -1,11 +1,11 @@
+import 'dart:io';
 
-// Referencia de libs:
-// https://dart.dev/guides/libraries
+// Para executar o script, apenas clique em Run
+// Para compilar o código, digite: dart compile exe ex_01_alomundo.dart
 
-// Tutoriais:
-// https://www.tutorialspoint.com/dart_programming/
-// https://dart.dev/guides/language/language-tour
+main()
+{
+  print("Alo mundo!\nDeu certo!");
 
-main() {
-  print("alo mundo");
+  stdin.readLineSync(); // trava a tela pra ler do teclado
 }
