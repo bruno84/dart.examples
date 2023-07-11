@@ -36,7 +36,7 @@ main()
   // OBS: perceba que o conjunto é definido por {...}
 
   // Declaração de um set vazio
-  Set<int> mySetDec = new Set<int>();  
+  Set<int> mySetDec = new Set<int>();  // ou apenas: ... = {}
   print("mySetDec: $mySetDec");
   print("size: ${mySetDec.length} \n");
 
