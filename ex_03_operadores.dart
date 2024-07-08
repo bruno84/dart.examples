@@ -1,4 +1,5 @@
 import 'dart:io';
+
 // EXEMPLO:
 // Operadores
 
@@ -55,13 +56,12 @@ main()
   // OPERADORES LÓGICOS
   //-------------------------------------------------------
   print("\nOPERADORES LÓGICOS");
-  bool bool1, bool2;
-  bool1 = false;
-  bool2 = true;
-  print( bool1 && bool2 ); // false
+  bool bool1 = false;
+  bool bool2 = true;
+  print( bool1 && bool2 ); // false*
   print( bool2 && bool1 ); // false
   print( bool1 || bool2 ); // true
-  print( bool2 || bool1 ); // true
+  print( bool2 || bool1 ); // true*
   print(!bool1);           // true
   print(!bool2);           // false
 
@@ -87,7 +87,7 @@ main()
   print(result); // 59
 
   print("Operador: ^ (XOR bit a bit)");
-  result = int1 | int2; // XOR bit a bit (OU EXCLUSIVO)
+  result = int1 ^ int2; // XOR bit a bit (OU EXCLUSIVO)
   print(  int1.toRadixString(2).padLeft(8, '0')); // 00101010
   print(  int2.toRadixString(2).padLeft(8, '0')); // 00011011
   print(result.toRadixString(2).padLeft(8, '0')); // 00110001
@@ -165,22 +165,23 @@ main()
   // OPERADOR SPREAD
   //-------------------------------------------------------
   print("\nOPERADOR SPREAD");
-  final letras  = ["A", "B", "C"];
-  final numeros = ["1", "2", "3"];
-  final alfabeto = [...letras, ...numeros]; // concatena todos os elementos
+  const letras  = ["A", "B", "C"];
+  const numeros = ["1", "2", "3"];
+  const alfabeto = [...letras, ...numeros]; // concatena todos os elementos
   print(alfabeto); // [A, B, C, 1, 2, 3]
 
   //-------------------------------------------------------
   // OPERADORES DE NULIDADE
   //-------------------------------------------------------
   print("\nOPERADORES DE NULIDADE");
+  // Objetivo: define um valor como "plano B", caso o operando1 for null
 
   int? obj1 = null;
-  var r1 = obj1 ?? 10; // Haverá atribuição pois obj1 é null
+  var r1 = obj1 ?? 10; // Se null, atribui 10
   print(r1); // 10
 
   int? obj2 = 20;
-  var r2 = obj2 ?? 10; // Não haverá atribuição pois obj2 não é null
+  var r2 = obj2 ?? 10; // Não null, então não atribui 10
   print(r2); // 20
 
   var r3 = null;

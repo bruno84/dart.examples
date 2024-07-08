@@ -25,9 +25,23 @@ main()
   print("teste");
 
   /*
-    Observações: Null Safety
+    Observação: Null Safety
     Marcar situações onde pode haver null:
     ? : quando há chance da variável ser null
     ! : quando há chance da expressão ser null
    */
+
+  /*
+    Observação: style - constants (polêmica)
+    Usar lowerCamelCase, exceto se o código legado já usar SCREAMING_CAPS.
+    Fonte: https://dart.dev/effective-dart/style
+   */
+
+  /*
+    Observação: style - package
+    Embora o padrão Dart permita my_package, isso não é aceito na Apple.
+    Logo, melhor usar: mypackage
+    Obviamente, não usar: MyPackage
+   */
+
 }

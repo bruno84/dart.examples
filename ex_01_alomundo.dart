@@ -10,7 +10,8 @@ import 'dart:io';
 // OBS: É obrigatório haver uma função main
 main()
 {
-  print("Alo mundo!\nDeu certo!");
+  print("Alo mundo!\nDeu certo!"); // tanto faz: aspas simples ou dupla
 
+  print('Press any key to exit!');
   stdin.readLineSync(); // trava a tela pra ler do teclado
 }

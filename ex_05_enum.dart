@@ -13,6 +13,10 @@ void main()
   print(myEnum.values); 
   print("");
 
+  var list = myEnum.values;
+  print(list);
+  print("");
+
   for (var item in myEnum.values) {
     print('valor: $item, indice: ${item.index}');
   }

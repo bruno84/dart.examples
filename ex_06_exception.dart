@@ -18,6 +18,7 @@ String situacaoAluno(double media)
 
 main()
 {
+  print("\nEXEMPLO 1: throw Exception");
   try {
     print( situacaoAluno(11) );
   }
@@ -25,14 +26,14 @@ main()
     print(e);
   }
 
-  print("");
+  print("\nEXEMPLO 2: Exception generica e finally");
 
   int num = 10; 
   int den = 0;
    
   try { 
     print( num ~/ den );
-  }  
+  }
   catch(e) { 
     print(e); 
   } 
@@ -40,13 +41,16 @@ main()
     print("Sempre será executado!"); 
   }
 
-  print("");
+  print("\nEXEMPLO 3: Exception nomeada e finally");
 
   try {
     print( num ~/ den );
   }  
   on UnsupportedError {
     print("ERRO: divisao por zero!"); 
+  }
+  catch(e) {
+    print(e); // caso outra Exception não nomeada passe
   }
   finally {
     print("Sempre será executado!"); 
