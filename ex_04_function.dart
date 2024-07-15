@@ -29,11 +29,18 @@ dynamic calcularSomaDynamic(dynamic a, dynamic b)
 }
 
 
-// Função com parâmetros opcionais:
-void parametrosOpcionais(String param1, {int? param2, double? param3})
+// Função com parâmetros opcionais, nomeados:
+void parametrosOpcionaisNomeados(String param1, {int? param2, double? param3})
 {
-  print("parametrosOpcionais");
-  print("$param1 $param2 $param3");
+  print("parametrosOpcionaisNomeados");
+  print("param1=$param1 param2=$param2 param3=$param3");
+}
+
+// Função com parâmetros opcionais, ordenados:
+void parametrosOpcionaisOrdenados(String param1, [int? param2, double? param3])
+{
+  print("parametrosOpcionaisOrdenados");
+  print("param1=$param1 param2=$param2 param3=$param3");
 }
 
 
@@ -68,11 +75,17 @@ void main()
 
   print("");
 
-  parametrosOpcionais("Bruno");
-  parametrosOpcionais("Bruno", param2: 10);
-  parametrosOpcionais("Bruno", param3: 7.5);
-  parametrosOpcionais("Bruno", param2: 10, param3: 7.5);
-
+  parametrosOpcionaisNomeados("Bruno1");
+  parametrosOpcionaisNomeados("Bruno1", param2: 10);
+  parametrosOpcionaisNomeados("Bruno1", param3: 7.5);
+  parametrosOpcionaisNomeados("Bruno1", param2: 10, param3: 7.5);
+  //parametrosOpcionaisNomeados("Bruno1", 10, 7.5);         // erro: params precisam ser nomeados
+  print("");
+  parametrosOpcionaisOrdenados("Bruno2");
+  parametrosOpcionaisOrdenados("Bruno2", 10);
+  //parametrosOpcionaisOrdenados("Bruno2", 7.5);          // erro: pois param2 é int
+  //parametrosOpcionaisOrdenados("Bruno2", param3: 7.5);  // erro: params não podem ser nomeados
+  parametrosOpcionaisOrdenados("Bruno2", 10, 7.5);
   print("");
 
   r = calcular(2, 5, calcularSomaNormal);
