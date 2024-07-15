@@ -1,4 +1,3 @@
-import 'dart:io';
 
 // Exemplo: estruturas condicionais
 

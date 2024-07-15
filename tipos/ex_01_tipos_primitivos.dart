@@ -10,7 +10,7 @@ main()
   //------------------------------------------------------
   // Tipos "primitivos"
   //------------------------------------------------------
-  print("Tipos \"primitivos\"");
+  print("TIPOS \"PRIMITIVOS\"");
   // OBS: perceba que essas variáveis são objetos.
 
   bool myBool = true;
@@ -28,43 +28,50 @@ main()
   //------------------------------------------------------
   // Numbers
   //------------------------------------------------------
-  print("\nNumbers");
-
+  print("\nNUMBERS");
   // num : classe pai de int e double
+
+  print("\nIdentificação:");
   num myNum = 10;
-  print(myNum);
+  print(myNum);             // 10
   print(myNum is int);      // true
   print(myNum is double);   // false
   print(myNum.runtimeType); // int
 
-  int i = myNum as int; //converte myNum em int
-  print(i);
+  print("\nConversão:");
 
-  print("");
+  int i = myNum as int; //converte myNum em int
+  print(i);   // 10
 
   myNum = 10.99;
-  print(myNum);
+  print(myNum);             // 10.99
   print(myNum is int);      // false
   print(myNum is double);   // true
   print(myNum.runtimeType); // double
 
   double d = myNum as double; //converte myNum em double
-  print(d);
+  print(d); // 10.99
 
   //-------------------------------------------------------
   // var x dynamic x late
   //-------------------------------------------------------
-  print("\nvar x dynamic x late");
+  print("\nMODIFICADORES");
+  print("var x dynamic x late");
 
-  // Variável cujo tipo é definido na primeira atribuição
+  print("\nvar");
+  // Variável cujo tipo é definido na inicialização
   var myVar = 10;
   print( myVar is bool );
   print( myVar is int );      // true
   print( myVar is double );
   print( myVar is String );
 
-  print("");
+  // myVar = "Bruno";   // erro
 
+  // TODO
+  // var myVar; permite outros tipos em atribuições posteriores.
+
+  print("\ndynamic");
   // Variável cujo tipo pode ser alterado em cada atribuição
   // OBS: uma variável em Dart armazena a referência para o valor. 
   dynamic myDyn = 10;
@@ -72,10 +79,10 @@ main()
   myDyn = "dez";
   print("myDyn: $myDyn");
 
-  print("");
-
+  print("\nlate");
   // Variável late (Dart 2.12)
   // Permite declarar uma variável sem precisar inicializar.
+  // OBS: importante na declaração de atributos de uma classe.
   late String myLate;
   myLate = "Só depois...";
   print("myLate: $myLate");
@@ -88,8 +95,10 @@ main()
   // const : se o valor é conhecido apenas em tempo de compilação.
   // final : se o valor é conhecido apenas em tempo de execução.
 
-  const double PI = 3.1416;
-  print("Constante PI: $PI");
-  final int NUM = Random().nextInt(10); // valor >= 0 and < 10
-  print("Constante STR: $NUM");
+  const double constPi  = 3.1416;
+  print("Constante constPi: $constPi");
+
+  final int constRand;
+  constRand = Random().nextInt(10); // valor >= 0 and < 10
+  print("Constante constRand: $constRand");
 }

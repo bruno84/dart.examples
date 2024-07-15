@@ -75,13 +75,17 @@ void main()
   for (String str in myList) {
     stdout.write("$str ");
   }
+  print("");
+  for (String str in subList1) {
+    stdout.write("$str ");
+  }
 
   //-------------------------------------------------------
   // FOR-IN (para objetos not-iterable)
   //-------------------------------------------------------
   print("\nFOR-IN (not-iterable)");
 
-  Map<int, String> myMap = {1: "Valor1", 3: "Valor3", 2: "Valor2"};
+  Map<int, String> myMap = {1:"Valor1", 3:"Valor3", 2:"Valor2"};
   print("myMap.keys");
   for (int key in myMap.keys) {
     stdout.write("$key:${myMap[key]}  ");

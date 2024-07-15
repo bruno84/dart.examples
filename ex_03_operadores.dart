@@ -1,5 +1,3 @@
-import 'dart:io';
-
 // EXEMPLO:
 // Operadores
 

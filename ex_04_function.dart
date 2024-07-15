@@ -48,7 +48,7 @@ double calcular(double a, double b, Function funcao)
 void main() 
 {
   var r = calcularSomaNormal(2, 5);
-  print(r);
+  print(r); // 7.0
 
   print("");
 
