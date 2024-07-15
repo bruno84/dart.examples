@@ -55,23 +55,21 @@ main()
   //-------------------------------------------------------
   // var x dynamic x late
   //-------------------------------------------------------
-  print("\nMODIFICADORES");
   print("var x dynamic x late");
 
   print("\nvar");
   // Variável cujo tipo é definido na inicialização
-  var myVar = 10;
-  print( myVar is bool );
-  print( myVar is int );      // true
-  print( myVar is double );
-  print( myVar is String );
+  var myVar1 = 10;
+  print(myVar1.runtimeType);  // int
+  // myVar1 = "Bruno";        // erro: pois já foi definido como int
 
-  // myVar = "Bruno";   // erro
+  var myVar2;
+  myVar2 = 10;
+  print(myVar2.runtimeType);  // int
+  myVar2 = "Bruno";           // É tratada como dynamic se não for inicializada
+  print(myVar2.runtimeType);  // string
 
-  // TODO
-  // var myVar; permite outros tipos em atribuições posteriores.
-
-  print("\ndynamic");
+  print("\n dynamic");
   // Variável cujo tipo pode ser alterado em cada atribuição
   // OBS: uma variável em Dart armazena a referência para o valor. 
   dynamic myDyn = 10;
