@@ -4,6 +4,7 @@ main() async
 {
   // Cria arquivo:
   final arquivo = File("minha_pasta1/arq_bytes.txt");
+  arquivo.delete();
   arquivo.create().then( print );
 
   // Escreve bytes:

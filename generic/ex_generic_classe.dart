@@ -1,5 +1,11 @@
+
+//------------------------------------------------------------------------------
+// CLASSES DA HIERARQUIA
+//------------------------------------------------------------------------------
 // Classe abstrata
-abstract class Pessoa {}
+abstract class Pessoa {
+  void exibir();
+}
 
 // Classe entidade concreta
 class Cliente extends Pessoa
@@ -8,6 +14,11 @@ class Cliente extends Pessoa
   late String _nome;
   late int _ano;
   Cliente(this._cpf, this._nome, this._ano);
+
+  @override
+  void exibir() {
+    print("Cliente: $_cpf, $_nome, $_ano");
+  }
 }
 
 // Classe entidade concreta
@@ -17,9 +28,18 @@ class Fornecedor extends Pessoa
   late String _nome;
   late double _servico;
   Fornecedor(this._codigo, this._nome, this._servico);
+
+  @override
+  void exibir() {
+    print("Fornecedor: $_codigo, $_nome, $_servico");
+  }
 }
 
-// Classe genérica sem restrição
+
+//------------------------------------------------------------------------------
+// CLASSE GENÉRICA (SEM restrição)
+//------------------------------------------------------------------------------
+
 class FilaSemRestricao<T>
 {
   List<T> _lista = [];
@@ -29,7 +49,10 @@ class FilaSemRestricao<T>
   }
 }
 
-// Classe genérica com restrição
+//------------------------------------------------------------------------------
+// CLASSE GENÉRICA (COM restrição)
+//------------------------------------------------------------------------------
+
 class FilaComRestricao<T extends Pessoa>
 {
   List<T> _lista = [];
@@ -39,7 +62,9 @@ class FilaComRestricao<T extends Pessoa>
   }
 }
 
-
+//------------------------------------------------------------------------------
+// MAIN
+//------------------------------------------------------------------------------
 void main()
 {
   FilaSemRestricao filaString = FilaSemRestricao<String>();
@@ -48,16 +73,17 @@ void main()
 
   FilaSemRestricao filaCliente = FilaSemRestricao<Cliente>();
   filaCliente.adicionar( Cliente("123.456.789-00", "Fulano1", 1984) );
+  filaCliente.adicionar( Cliente("123.456.789-01", "Fulano2", 1985) );
 
   FilaSemRestricao filFornecedor = FilaSemRestricao<Fornecedor>();
-  filFornecedor.adicionar( Fornecedor("789", "Servico1", 10) );
-  filFornecedor.adicionar( Cliente("222.456.789-00", "Fulano2", 1990) ); // Unhandled exception
-
+  filFornecedor.adicionar( Fornecedor("788", "Servico1", 10) );
+  filFornecedor.adicionar( Fornecedor("790", "Servico2", 11) );
 
   //FilaComRestricao filaString2 = FilaComRestricao<String>(); // Desrespeita restrição
   //filaString2.adicionar( "str1" );
   //filaString2.adicionar( "str2" );
 
   FilaComRestricao filaCliente2 = FilaComRestricao<Cliente>(); // Respeita restrição
-  filaCliente2.adicionar( Cliente("333.456.789-00", "Fulano3", 1994) );
+  filaCliente2.adicionar( Cliente("333.456.789-00", "Fulano1", 1994) );
+  filaCliente2.adicionar( Cliente("333.456.789-01", "Fulano2", 1995) );
 }

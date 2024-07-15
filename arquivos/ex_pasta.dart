@@ -20,6 +20,6 @@ main() async
   pasta2.exists().then( (flag) => print("pasta2 $flag") );
 
   // Deleta pasta2
-  pasta2.delete(recursive: true);
+  pasta2.delete(recursive: true).then( ( diretorio ) => print("diretorio: $diretorio") );
 }
 

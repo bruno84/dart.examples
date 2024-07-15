@@ -47,7 +47,7 @@ class ClassFilha extends ClassPai with ClassMixin
   }
 }
 
-// classe Mixin: classe cujos atributos podem ser usados por outras classes, mas não pertecem à hierarquia
+// classe Mixin: classe cujos atributos podem ser usados por outras classes, mas NÃO pertecem à hierarquia!!!
 mixin ClassMixin
 {
   double _atrMixin = 3.14;

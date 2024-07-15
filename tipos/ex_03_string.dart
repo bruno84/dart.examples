@@ -1,10 +1,12 @@
+// Exemplo: exemplos de métodos da classe String
+
 void main()
 {
   // OBS: É preciso fazer conversão explícita para string
   String str = 'Resultado:' + 42.toString();
   print(str); // > Resultado: 42
 
-  // split()
+  print("\n split()");
   str = "Bruno";
   List<String> letras = str.split('');
   print(letras);
@@ -12,13 +14,14 @@ void main()
   List<String> silabas = str.split('-');
   print(silabas);
 
-  // Unicode
+  print("\n Unicode");
   str = "ABC";
   print(str.codeUnits); // [65, 66, 67] list
   print(str.runes);     // (65, 66, 67) iterable
+  // OBS: runes = Unicode code points of a string
   print(String.fromCharCode(65)+String.fromCharCode(67)); // AC
 
-  // Aspas
+  print("\n Aspas");
   print("Alguém disse: 'Tudo em paz?' ");
   print('Alguém disse: "Tudo em paz?" ');
   print("Alguém disse: \"Tudo em paz?\" ");
@@ -26,19 +29,19 @@ void main()
   várias 
   linhas''');
 
-  // Comparações
+  print("\n Comparações");
   String str1 = "Ana";
   String str2 = "Bruno";
-  String str3 = "Bruno";
-  String str4 = "Caio";
+  String str3 = "Caio";
+  String str33 = "Caio";
 
   print( str1 == str2 );
   print( identical(str1, str2) );
-  print( str1.compareTo(str2) );
-  print( str4.compareTo(str2) );
+  print( str2.compareTo(str1) );
   print( str2.compareTo(str3) );
+  print( str3.compareTo(str33) );
 
-  // Funções diversas
+  print("\n Funções diversas");
   str = "";
   print('isEmpty: ${str.isEmpty}'); // isEmpty: true
   str = "Brunooo";
@@ -51,4 +54,5 @@ void main()
   print("endsWith: ${str.endsWith("ooo")}" );       // true
   print("toLowerCase: ${str.toLowerCase()} ");  // brunooo
   print("toUpperCase: ${str.toUpperCase()} ");  // BRUNOOO
+  print(str); // lembre-se! nao é alterada!
 }
