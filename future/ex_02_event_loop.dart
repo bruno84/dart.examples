@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'dart:io';
 
-// EXEMPLO:
-// Fila de prioridade de Evento e Microtask
+// EXEMPLO: tasks síncronas, mas com fila de prioridade.
+// tasks: Event (baixa prioridade) e Microtask (alta prioridade)
 
 void main ()
 {
@@ -23,7 +23,5 @@ void main ()
 
   scheduleMicrotask( () => print('Microtask 3') ); //2
 
-  print('dorme!');
-  sleep(const Duration(seconds: 3)); // Para ilustrar que há uma única thread
   print('Fim main()');
 }

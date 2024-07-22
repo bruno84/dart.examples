@@ -1,5 +1,5 @@
-// EXEMPLO:
-// Future com delay
+
+// EXEMPLO: Fluxo assíncrono (Future) com delay
 
 void main()
 {
@@ -11,6 +11,8 @@ void main()
   buscarIdFunc.then( (int id) {
     print("ID encontrado: $id");
   });
+
+  print("Fim!");
 }
 
 Future<int> buscarId() {

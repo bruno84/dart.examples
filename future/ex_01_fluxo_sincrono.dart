@@ -1,7 +1,6 @@
 import 'dart:io';
 
-// EXEMPLO:
-// processamento síncrono
+// EXEMPLO: processamento síncrono
 
 void main ()
 {
