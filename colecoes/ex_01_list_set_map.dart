@@ -70,7 +70,7 @@ main()
   print("\n map: vazio");
 
   // Declaração de um map vazio
-  Map<int, String> myMapDec = new Map<int, String>();  
+  Map myMapDec = new Map<int, String>();
   print("myMapDec: $myMapDec");
   print("size: ${myMapDec.length}");
 
@@ -79,9 +79,9 @@ main()
   // Mapa <chave, valor>
   Map<int, String> myMap = {1: "Valor1", 2: "Valor2", 3: "Valor3"};
   print("myMap: $myMap");
-  myMap[4] = "Valor4";    // chave nova: valor adicionado
+  myMap[5] = "Valor5";    // chave nova: valor adicionado
   print("myMap: $myMap");
-  myMap[4] = "Valor44";   // chave já existe: valor é sobrescrito
+  myMap[5] = "Valor55";   // chave já existe: valor é sobrescrito
   print("myMap: $myMap");
   myMap.remove(2);        // remove
   print("myMap: $myMap");

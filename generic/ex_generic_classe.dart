@@ -1,4 +1,13 @@
 
+/*
+Convensão:
+E: representa o tipo de um elemento em uma coleção.
+K: representa o tipo da chave em um Map.
+V: representa o tipo do valor em um Map.
+R: representa o tipo do retorno do método/função.
+T: representa o tipo de um objeto em cenários diversos.
+*/
+
 //------------------------------------------------------------------------------
 // CLASSES DA HIERARQUIA
 //------------------------------------------------------------------------------
@@ -52,7 +61,6 @@ class FilaSemRestricao<T>
 //------------------------------------------------------------------------------
 // CLASSE GENÉRICA (COM restrição)
 //------------------------------------------------------------------------------
-
 class FilaComRestricao<T extends Pessoa>
 {
   List<T> _lista = [];
@@ -71,6 +79,10 @@ void main()
   filaString.adicionar( "str1" );
   filaString.adicionar( "str2" );
 
+  FilaSemRestricao filaInt = FilaSemRestricao<int>();
+  filaInt.adicionar( 10 );
+  filaInt.adicionar( 20 );
+
   FilaSemRestricao filaCliente = FilaSemRestricao<Cliente>();
   filaCliente.adicionar( Cliente("123.456.789-00", "Fulano1", 1984) );
   filaCliente.adicionar( Cliente("123.456.789-01", "Fulano2", 1985) );
@@ -79,11 +91,14 @@ void main()
   filFornecedor.adicionar( Fornecedor("788", "Servico1", 10) );
   filFornecedor.adicionar( Fornecedor("790", "Servico2", 11) );
 
-  //FilaComRestricao filaString2 = FilaComRestricao<String>(); // Desrespeita restrição
-  //filaString2.adicionar( "str1" );
-  //filaString2.adicionar( "str2" );
 
   FilaComRestricao filaCliente2 = FilaComRestricao<Cliente>(); // Respeita restrição
   filaCliente2.adicionar( Cliente("333.456.789-00", "Fulano1", 1994) );
   filaCliente2.adicionar( Cliente("333.456.789-01", "Fulano2", 1995) );
+
+  //FilaComRestricao filaString2 = FilaComRestricao<String>(); // Desrespeita restrição
+  //filaString2.adicionar( "str1" );
+  //filaString2.adicionar( "str2" );
+
+
 }

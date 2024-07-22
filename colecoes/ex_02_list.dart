@@ -3,26 +3,27 @@ import 'dart:io';
 main()
 {
   // OBS: growable = capacidade de crescer
+  // OBS: diferentemente de Java, em Dart não á como controlar a capacidade.
 
   print("\n empty");
 
-  List<int> lista1 = List<int>.empty(); // growable: true (default)
+  List<int> lista1 = List<int>.empty(); // growable: false (default)
   print("lista1: $lista1"); // []
+  // lista1.add(99); // ERRO
 
-  List<int> lista2 = List<int>.empty(growable: false);
+  List<int> lista2 = List<int>.empty(growable: true);
   print("lista2: $lista2"); // []
-  //lista2.add(99); // ERRO!
+  lista2.add(99);
 
   List<int> lista3 = [];
   print("lista3: $lista3"); // []
   lista3.add(99);
 
-
   print("\n filled");
 
   List<int> lista4 = List<int>.filled(5, -1); // growable: false (default)
   print("lista4: $lista4"); // [-1, -1, -1, -1, -1]
-  // lista4.add(99); ERRO!
+  // lista4.add(99); // ERRO!
 
   List<int> lista5 = List<int>.filled(5, -1, growable: true);
   print("lista5: $lista5"); // [-1, -1, -1, -1, -1]
@@ -32,7 +33,7 @@ main()
 
   print("\n generate");
 
-  List<int> lista6 = List<int>.generate(5, (index) => -1);
+  List<int> lista6 = List<int>.generate(5, (indice) => -1);
   print("lista6: $lista6");
   lista6.add(0);
   lista6.add(9);
@@ -51,6 +52,9 @@ main()
   lista8.fillRange(2, 4, -2); // OBS: end = index-1
   print("lista8: $lista8"); // [4, 3, -2, -2, 0]
 
+  print("\n sort");
+  lista8.sort();
+  print("lista8: $lista8");
 
   print("\n MATRIZ");
 

@@ -37,9 +37,9 @@ void main()
 
   print( str1 == str2 );
   print( identical(str1, str2) );
-  print( str2.compareTo(str1) );
-  print( str2.compareTo(str3) );
-  print( str3.compareTo(str33) );
+  print( str2.compareTo(str1) );  //  1
+  print( str2.compareTo(str3) );  // -1
+  print( str3.compareTo(str33) ); // 0
 
   print("\n Funções diversas");
   str = "";

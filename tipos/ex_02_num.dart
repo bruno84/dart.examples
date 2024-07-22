@@ -40,12 +40,13 @@ main()
   print(myInt.compareTo(-7));  // 1    // está depois (-7 ... -5)
 
   print("\n parse");
-  var myNum = num.parse("10");
+  num myNum = num.parse("10");
   print(myNum is int); // true
   print(myNum);
   myNum = num.parse("10.91");
   print(myNum is double); // true
   print(myNum);
+
 
   print("\n toString");
   myDouble = 1.2345678901234567890;
